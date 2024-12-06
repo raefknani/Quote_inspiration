@@ -1,0 +1,55 @@
+
+<div class="container">
+   
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center align-items-center">
+          <!-- Left Logo -->
+          <img src="photos/logo1.png" alt="Left Logo" class="img-fluid" style="height: 80px; width: auto; margin-right: 20px;">
+          
+          <!-- Title -->
+          <h1 class="text-center mt-2 mb-5  tit" style="margin: 0;">Inspire Quotes</h1>
+          
+          <!-- Right Logo -->
+          <img src="photos/logo1.png" alt="Right Logo" class="img-fluid" style="height: 80px; width: auto; margin-left: 20px;">
+        </div>
+      </div>
+    
+    
+ 
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-12 mt-5" *ngFor="let item of quotes">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img [src]="item.image" class="imgg" alt="Avatar">
+                        <!-- <img [src]="'http://127.0.0.1:3000/getimage/' + item.image" class="imgg" alt="Avatar"> -->
+                        
+                    
+                        
+                        
+                    </div>
+                    <div class="flip-card-back card-body">
+                        <h5 class="name" [ngStyle]="{'color': item.color}">{{item.name}}</h5>
+                        <p class="quote">{{item.quote}}</p>
+
+                        <div class="container">
+                            <button class="button-55 bou bout" role="button" (click)="supp(item._id)">Delete</button>
+                            <!-- <button class="btn bou bout " (click)="supp(item._id)">Delete</button> -->
+                            <!-- <button class="btn bou boutt "  [routerLink]="['/update' , item._id]"  >update</button> -->
+
+                            <button class="button-555 bou bout" role="button" [routerLink]="['/update' , item._id]" >update</button>
+                
+                        </div>
+                        
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
